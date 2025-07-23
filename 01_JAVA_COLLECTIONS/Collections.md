@@ -50,3 +50,23 @@ public class ListComparison {
 - However, if you need to perform many insertions and deletions, especially at the beginning or end, `LinkedList` is more efficient. Because the `LinkedList` allows for constant time insertions and deletions at both ends, making it suitable for scenarios where data manipulation is frequent. The node structure of `LinkedList` allows for efficient memory usage when adding or removing elements, as it does not require shifting elements like `ArrayList` does.
 > Why use `ArrayList` over `Array`?  
 > **Answer:** `ArrayList` provides dynamic resizing, built-in methods for manipulation, and better memory management compared to fixed-size arrays. It allows for easy addition and removal of elements without needing to manage the size manually.
+
+
+### Q2: How does `HashMap` work internally?
+**Answer:**
+`HashMap` uses a hash table to store key-value pairs. 
+- It calculates the hash code of the key to determine the index in the underlying array where the value is stored. 
+- If multiple keys hash to the same index (collision), `HashMap` uses a linked list or tree structure (in Java 8 and later) to store these entries.
+- Hash code of the key is computed, and the index in the array is calculated using:
+  `index = hash(key) % capacity`
+
+```java
+import java.util.HashMap;
+
+Map<String, Integer> map = new HashMap<>();
+map.put("Apple", 1);
+map.put("Banana", 2);
+map.put("Cherry", 3);
+System.out.println("HashMap: " + map);
+// Output: HashMap: {Apple=1, Banana=2, Cherry=3}
+```
