@@ -45,6 +45,18 @@ public class Encapsulation {
                 return false;
             }
         }
+
+        public static void main (String[] args){
+            BankAccount account = new BankAccount("123456789", "John Doe", 1000.0);
+            account.deposit(1000.0); // Deposit 1000
+            System.out.println("Balance after deposit: " + account.getBalance()); // Should print 2000.0
+            boolean success = account.withdraw(500.0); // Withdraw 500
+            if (success) {
+                System.out.println("Balance after withdrawal: " + account.getBalance()); // Should print 1500.0
+            } else {
+                System.out.println("Withdrawal failed.");
+            }
+        }
     }
 }
 // Summary:
