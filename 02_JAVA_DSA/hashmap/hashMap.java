@@ -1,3 +1,5 @@
+package hashmap;
+
 public class hashMap {
     private static class Entry{
         final int key;
@@ -10,7 +12,7 @@ public class hashMap {
     }
 
     private final int size = 1000;
-    private Entry[] table = new Entry[size];
+    private final Entry[] table = new Entry[size];
 
     public void put(int key, int value){
         int index = key % size;
